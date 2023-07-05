@@ -1,0 +1,532 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Libre+Baskerville&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #171923;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.App {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+/* Navigation menu */
+
+.nav-menu {
+  background-color: rgba(23, 25, 35, 0.7);
+  backdrop-filter: blur(20px) saturate(1.7);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.nav-menu .nav-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+}
+
+/* Hero section */
+.hero-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 11rem;
+}
+
+.hero-text h1 {
+  font-family: "Libre Baskerville", serif;
+  font-size: 6rem;
+  font-weight: 400;
+  animation-name: heading;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  opacity: 0;
+  top: -1rem;
+}
+
+@keyframes heading {
+  0% {
+    opacity: 0;
+    top: -1rem;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.hero-text h2 {
+  font-family: "Libre Baskerville", serif;
+  font-size: 4rem;
+  font-weight: 400;
+  opacity: 0;
+  animation-name: sub-heading;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+
+@keyframes sub-heading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.hero-text p {
+  text-align: center;
+  margin: 2rem 0 3rem;
+  width: 600px;
+  opacity: 0;
+  animation-name: sub-text;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sub-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.section-title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Projects */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.projects {
+  overflow: hidden;
+  opacity: 0;
+  animation-name: sub-text;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.project-slide {
+  animation: 12s slide linear infinite;
+  white-space: nowrap;
+}
+
+.project-slide:hover {
+  animation-play-state: paused;
+}
+
+.projects .project-img {
+  width: 500px;
+  height: 280px;
+  margin: 0 1rem;
+}
+
+/* buttons */
+.cta {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 4rem;
+}
+
+.primary-btn {
+  background-color: #fff;
+  color: #171923;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Blogs */
+.blog-section {
+  opacity: 0;
+  animation-name: sub-text;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.blog-ctn {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.blog {
+  padding: 1rem;
+  border: 1px solid #585b63;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.blog:hover {
+  border-color: #fff;
+}
+
+.blog .blog-img {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.blog .blog-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+
+.blog-title .blog-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* About */
+.bio-data {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  margin: 2rem 8rem;
+}
+
+.bio-img {
+  width: 100%;
+  border-radius: 8px;
+  opacity: 0;
+  animation-name: bio-image;
+  animation-duration: 1s;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+@keyframes bio-image {
+  0% {
+    opacity: 0;
+    left: -50px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.bio-right {
+  opacity: 0;
+  animation-name: sub-text;
+  animation-duration: 1s;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.bio-data .bio-title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  padding: 1rem 0 2rem;
+}
+
+.bio-data .bio-text {
+  padding-bottom: 2rem;
+}
+
+.photo-ctn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 0 3rem;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  animation-name: sub-text;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.photo-ctn .gallery-img {
+  width: 500px;
+  height: 330px;
+  object-fit: cover;
+}
+
+/* Projects  */
+.project-pg-title {
+  margin: 8rem 0 2rem;
+  font-size: 4rem;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  top: -1rem;
+  animation-name: heading;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.project-ctn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 2rem;
+  opacity: 0;
+  animation-name: sub-text;
+  animation-duration: 1s;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.project-card {
+  width: 500px;
+  padding: 1rem;
+  border: 1px solid #585b63;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border-color: #fff;
+}
+
+.project-img {
+  width: 500px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+
+.project-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding-bottom: 2rem;
+}
+
+.project-cta {
+  padding-bottom: 1rem;
+}
+
+.project-cta .primary-btn {
+  margin-right: 1rem;
+}
+
+/* Footer */
+.footer-ctn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0 5rem;
+}
+
+.footer-ctn .footer-text {
+  font-size: 2rem;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+}
+
+.footer-ctn .footer-links {
+  margin-top: 2rem;
+}
+
+.footer-ctn .footer-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+  font-weight: 400;
+}
+
+/* Mobile */
+@media (max-width: 1400px) {
+  * {
+    font-size: 14px;
+  }
+
+  .hero-text h1 {
+    font-size: 4rem;
+  }
+
+  .hero-text h2 {
+    font-size: 3.5rem;
+  }
+
+  .blog .blog-img {
+    width: 300px;
+    height: 150px;
+  }
+
+  .blog .blog-link {
+    font-size: 1.5rem;
+  }
+
+  /* About */
+  .bio-data .bio-title {
+    font-size: 2.5rem;
+    padding-top: 0;
+  }
+
+  .photo-ctn {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 11rem;
+  }
+
+  /* Projects */
+  .project-ctn {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .project-card {
+    width: 400px;
+  }
+}
+
+@media (max-width: 800px) {
+  * {
+    font-size: 12px;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .blog .blog-link {
+    font-size: 2rem;
+  }
+
+  /* About */
+  .bio-data {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem 4rem;
+    justify-items: center;
+  }
+
+  .bio-data .bio-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .bio-img {
+    width: 300px;
+  }
+
+  .photo-ctn {
+    grid-template-columns: 1fr;
+    margin: 0 1rem;
+    justify-items: center;
+  }
+
+  .photo-ctn .gallery-img {
+    width: 350px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  /* Projects*/
+  .project-ctn {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .project-text {
+    font-size: 1.5rem;
+  }
+
+  /* footer */
+  .footer-text {
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .footer-ctn .footer-link {
+    font-size: 1.4rem;
+  }
+}
