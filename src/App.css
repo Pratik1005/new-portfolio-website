@@ -469,6 +469,19 @@ p {
     font-size: 3rem;
   }
 
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-500%);
+    }
+  }
+
+  .blog {
+    width: 326px;
+  }
+
   .blog .blog-link {
     font-size: 2rem;
   }
