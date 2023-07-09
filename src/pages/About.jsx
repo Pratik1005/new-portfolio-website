@@ -21,7 +21,7 @@ export const About = () => {
         </div>
         <div className="bio-right">
           <h3 className="bio-title">
-            I'm a Frontend Enginner from Mumbai, India.
+            I'm a Frontend Engineer from Mumbai, India.
           </h3>
           <p className="bio-text">
             Coming from non-cs background I started learing web development from
