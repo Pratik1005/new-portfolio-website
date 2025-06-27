@@ -6,3 +6,5 @@ I have created this portfolio using React.
 Added about, projects and blogs.
 
 I will keep on updating my portfolio with my learnings and projects!
+
+To start project run: npm start
