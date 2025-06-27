@@ -1,5 +1,5 @@
 import {NavMenu} from "../components/NavMenu";
-import pratik from "../assets/pratik.jpg";
+import pratik from "../assets/profile-pic.jpeg";
 import {Footer} from "../components/Footer";
 import photo1 from "../assets/photo-1.jpg";
 import photo2 from "../assets/photo-2.jpg";
